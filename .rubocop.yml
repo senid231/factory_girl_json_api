@@ -1,0 +1,10 @@
+Style/IndentArray:
+  Enabled: false # rubymine uses 4 spaces for arrays
+Style/IndentHash:
+  Enabled: false # rubymine uses 4 spaces for hashes
+Style/Documentation:
+  Enabled: false # no need to document main gem module
+Style/FileName:
+  Enabled: false # ruby guide suggests to use dashes in this case
+#Metrics/AbcSize:
+#  Enabled: false
