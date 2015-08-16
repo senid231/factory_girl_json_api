@@ -1,26 +1,37 @@
 require 'spec_helper'
 
 describe FactoryGirl::Jsonapi::RecordFactory do
+  let(:factory) { build(:user, id: 1, name: 'John Doe') }
 
-  FactoryGirl.define do
-    factory :user, parent: :jsonapi_record do
-      type :users
-      id 1
-      name 'John Doe'
+  context '#to_json' do
+    let(:expected_factory) do
+      {
+          data: {
+              id: '1',
+              type: 'users',
+              attributes: {
+                  name: 'John Doe'
+              }
+          }
+      }.to_json
+    end
+
+    it 'factory should return correct result' do
+      expect(factory.to_json).to eq expected_factory
     end
   end
 
-  let(:expected_factory) do
-    f = FactoryGirl::Jsonapi::RecordFactory.new
-    f.attributes[:name] = 'John Doe'
-    f.id = 1
-    f.type = :users
-  end
+  context '#dup' do
+    it 'should create correct duplicate' do
+      new = factory.dup
+      expect(new.to_json).to eq factory.to_json
+    end
 
-  it 'factory_girl result and should be equal' do
-    factory = build(:user)
-    expected_factory = FactoryGirl::Jsonapi::RecordFactory.new
-    expect(factory).to eq expected_factory
+    it 'should be different objects' do
+      new = factory.dup
+      new.id = 999
+      expect(new.to_json).to_not eq factory.to_json
+      expect(new.id).to_not eq factory.id
+    end
   end
-
 end
