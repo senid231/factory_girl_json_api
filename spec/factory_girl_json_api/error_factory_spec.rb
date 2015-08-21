@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FactoryGirl::Jsonapi::ErrorFactory do
+describe FactoryGirlJsonApi::ErrorFactory do
   let(:error) do
     build(:validation_error, title: 'should be present', field_name: :name)
   end

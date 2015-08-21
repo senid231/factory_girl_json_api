@@ -1,18 +1,18 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'factory_girl-jsonapi/version'
+require 'factory_girl_json_api/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = 'factory_girl-jsonapi'
-  gem.version       = FactoryGirl::Jsonapi::VERSION
+  gem.name          = 'factory_girl_json_api'
+  gem.version       = FactoryGirlJsonApi::VERSION
   gem.authors       = ['Denis Talakevich']
   gem.email         = ['senid231@gmail.com']
 
   gem.summary       = 'Generate body in JSON API standard'
   gem.description   = 'Add ability to generate JSON API request/response body'\
                       ' with FactoryGirl'
-  gem.homepage      = 'https://github.com/senid231/factory_girl-jsonapi'
+  gem.homepage      = 'https://github.com/senid231/factory_girl_json_api'
 
   gem.files         = `git ls-files`.split($RS)
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})

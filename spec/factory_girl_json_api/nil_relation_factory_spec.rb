@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FactoryGirl::Jsonapi::NilRelationFactory do
+describe FactoryGirlJsonApi::NilRelationFactory do
 
   xit 'factory should return correct result' do
   end

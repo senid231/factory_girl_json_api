@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe FactoryGirl::Jsonapi::CollectionFactory do
+describe FactoryGirlJsonApi::CollectionFactory do
   let(:factories) do
     [
         build(:user, id: 1, name: 'Foo'),
         build(:user, id: 2, name: 'Bar')
     ]
   end
-  let(:collection) { build(:jsonapi_collection, records: factories) }
+  let(:collection) { build(:json_api_collection, records: factories) }
 
   let(:expected_collection) do
     {

@@ -1,9 +1,9 @@
 FactoryGirl.define do
-  factory :validation_error, parent: :jsonapi_error do
+  factory :validation_error, parent: :json_api_error do
     title 'is invalid'
-    code FactoryGirl::Jsonapi::ErrorFactory::VALIDATION_ERROR
-    status FactoryGirl::Jsonapi::ErrorFactory::STATUSES[
-               FactoryGirl::Jsonapi::ErrorFactory::VALIDATION_ERROR
+    code FactoryGirlJsonApi::ErrorFactory::VALIDATION_ERROR
+    status FactoryGirlJsonApi::ErrorFactory::STATUSES[
+               FactoryGirlJsonApi::ErrorFactory::VALIDATION_ERROR
            ]
 
     transient do
