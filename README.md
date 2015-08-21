@@ -17,6 +17,16 @@ And then execute:
 Or install it yourself as:
 
     $ gem install factory_girl_json_api
+    
+## Setup
+
+Add this to `spec/spec_helper.rb`
+
+```ruby
+module FactoryGirl
+  include FactoryGirlJsonApi::FactoryGirlExtension
+end
+```
 
 ## Contributing
 
